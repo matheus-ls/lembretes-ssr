@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  db-postgres-store:
+    image: postgres
+    ports:
+      - "5435:5432"
+    container_name: "db-postgress-store"
+    restart: always
+    volumes:
+      - ./database-store:/var/lib/postgresssql/data
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: root
+volumes:
+  pg-data:   
